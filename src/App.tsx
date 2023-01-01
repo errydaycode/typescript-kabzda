@@ -8,15 +8,17 @@ function App() {
     return (
         <div>
             <AppTitile />
-            <Rating />
+            Article 1
+            <Rating value={3}/>
             <Accordion/>
-            <Rating />
+            Article 2
+            <Rating value={4}/>
         </div>
     );
 }
 function AppTitile () {
     console.log('AppTitle rendering')
-    return <>This is App component!</>
+    return <div>This is App component!</div>
 }
 
 export default App;
