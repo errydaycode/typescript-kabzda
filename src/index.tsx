@@ -16,50 +16,48 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-
-
-
-
-
+//
 // let a = {
-//     name: 'Georgii',
-//     surname: 'Listopad',
-//         adress: {
-//             city: 'Zelenograd',
-//             country: 'Russia '
-//         }
+//     name : " Gera",
+//     age: 19,
+//     address : {
+//         city: 'Moscow',
+//         country: 'Russia'
+//     }
+//
 // };
+//
+//
 //
 // let users = [
 //     {
-//     name: 'Georgii',
-//     surname: 'Listopad',
-//     adress: {
-//         city: 'Zelenograd',
-//         country: 'Russia '
-//     }
-// },
+//         name : " Gera",
+//         age: 19,
+//         address : {
+//             city: 'Moscow',
+//             country: 'Russia'
+//         }
 //
+//     },
 //     {
-//         name: 'George',
-//         surname: 'Listopades',
-//         adress: {
-//             city: 'Los-Angeles',
+//         name : " Ivan",
+//         age: 43,
+//         address : {
+//             city: 'NY',
 //             country: 'USA'
 //         }
 //
 //     }
-//
-// ]
-//
-// let b : Array<boolean | number | string>;
-//
-// b = [1,2,3,4,5];
-// b = ['any', 'str']
-// b = [8,16,32,1675]
-// b = [true, false]
+//     ]
 //
 //
 //
+// let b: Array<string | number>;
 //
-// console.log(users[0].adress.country)
+// b= [1,2,3,4,5]
+// b= [1,2,3,4,5, 4343, 5, 3, 19, 343]
+// b= ['alloha', 'radio', 'uuuu']
+// b= [true, false]
+//
+//
+// console.log(users[1].address.country)
