@@ -15,12 +15,12 @@ function App() {
     console.log('App rendering')
     return (
         <div>
-           <AppTitle title={"Artice about Forest"}/>
+            <AppTitle title={"Artice about Forest"}/>
             Article 1
             <Rating value={3}/>
-            <Accordion title={"First Acc"}/>
-            <Accordion title={"Second Acc"}/>
-            <AppTitle title={"Article about IT"}/>
+            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <Accordion titleValue={"Users"} collapsed={false}/>
+             <AppTitle title={"Article about IT"}/>
             Article 2
             <Rating value={0}/>
             <Rating value={1}/>
