@@ -1,6 +1,6 @@
 import React from "react";
 
-type AppTitlePropsType={
+type AppTitlePropsType = {
     title: string
 }
 
