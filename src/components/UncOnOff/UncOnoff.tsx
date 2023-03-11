@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import s from './Onoff.module.css'
 
 type PropsType={
   //   turned: boolean
+    onChange: (turned: boolean) => void
 }
 
 
 
-export const Onoff =(props: PropsType)=> {
-    console.log("Onoff rendering")
+export const UncOnoff =(props: PropsType)=> {
+
     const [turned, setTurned] = useState(false)
 
     const onStyle = {
@@ -38,11 +38,20 @@ export const Onoff =(props: PropsType)=> {
         backgroundColor: turned ? "green" : "red"
     }
 
+    const onClicked = () => {
+        setTurned(true)
+        props.onChange(true)
+    }
+    const offClicked = () => {  setTurned(false)
+        props.onChange(false)
+    }
+
+
     return (
         <div>
 
-            <div style={onStyle}  onClick={()=> { setTurned(true) }}>On</div>
-            <div style={offStyle} onClick={()=> {  setTurned(false)}}> Off</div>
+            <div style={onStyle}  onClick={onClicked }>On</div>
+            <div style={offStyle} onClick={offClicked}> Off</div>
             <div style={indicatorStyle}></div>
 
 

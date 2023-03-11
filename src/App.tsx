@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./components/Rating/Rating";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {AppTitle} from "./components/AppTitle/AppTitle";
-import {Onoff} from "./components/OnOff/Onoff";
+import {UncOnoff} from "./components/UncOnOff/UncOnoff";
 import {UncAcc} from "./components/UncontrolledAcc/UncAcc";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
+import {ControlledOnoff} from "./components/controlledOnOff/ControlledOnoff";
 
 
 // function hello() {
@@ -15,23 +17,39 @@ import {UncAcc} from "./components/UncontrolledAcc/UncAcc";
 
 function App() {
     console.log('App rendering')
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let[collapse, setCollapse] = useState(true)
+    const [turned, setTurned] = useState(false)
     return (
-        <div>
+        <div className={"App"}>
+            <Rating value={ratingValue} onClick={setRatingValue} />
+            <UncontrolledRating/>
+            <Accordion titleValue={"--Menu--"} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} />
+            <UncOnoff onChange={setTurned} /> {turned.toString()}
+            {/*<ControlledOnoff turned={turned} setTurned={setTurned} />*/}
 {/*
             <Accordion titleValue={"Menu"} collapsed={true}/>
             <Accordion titleValue={"Users"} collapsed={false}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-            <Onoff turned={true}/>*/}
-            {/*<Onoff turned={false}/>
-            <Onoff turned={true}/>*/}
-            <UncAcc titleValue={"Menu"} />
-            <UncAcc titleValue={"Users"} />
-            <Onoff />
-            <Onoff />
+            <UncontrolledRating value={1}/>
+            <UncontrolledRating value={2}/>
+            <UncontrolledRating value={3}/>
+            <UncontrolledRating value={4}/>
+            <UncontrolledRating value={5}/>
+            <UncOnoff turned={true}/>*/}
+            {/*<UncOnoff turned={false}/>
+            <UncOnoff turned={true}/>*/}
+
+         {/*   <UncAcc titleValue={"Users"} />*/}
+
+
+
+        {/*    <UncOnoff />
+            <UncontrolledRating />
+            <UncontrolledRating />
+            <UncontrolledRating />
+            <UncontrolledRating />
+            <UncontrolledRating />*/}
         </div>
     );
 }
