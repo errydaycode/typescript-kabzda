@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
-import {Rating, RatingValueType} from "./Rating";
+import {UncOnoff} from "./UncOnoff";
+import {action} from "@storybook/addon-actions";
 
 
 
 export default {
-    title: 'Rating stories',
-    component: Rating,
+    title: 'UncOnoff ',
+    component: UncOnoff,
 }
 
+const callBack = () => {
+    action('on or off clicked')
+}
 
+export const OnMode = () => <UncOnoff  onChange={action('on or off clicked')} />
+export const OffMode = () => <UncOnoff onChange={action('on or off clicked')} />
 
-export const EmptyRating = () => <Rating value={0} onClick={x=> x}/>
-export const Rating1 = () => <Rating value={1} onClick={x=> x}/>
-export const Rating2 = () => <Rating value={2} onClick={x=> x}/>
-export const Rating3 = () => <Rating value={3} onClick={x=> x}/>
-export const Rating4 = () => <Rating value={4} onClick={x=> x}/>
-export const Rating5 = () => <Rating value={5} onClick={x=> x}/>
 export const ChangeRating = () => {
-    const [rating,setRating] = useState<RatingValueType>(3)
-   return  <Rating value={rating} onClick={setRating}/>
+    const [turned, setTurned] = useState(false)
+   return  <UncOnoff  onChange={()=>setTurned(!turned)}/>
 }
 
 

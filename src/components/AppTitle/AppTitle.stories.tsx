@@ -7,4 +7,4 @@ export default {
     component: AppTitle
 }
 
-export const Default =()=> <AppTitle title={'xD'}/>
+export const Default = () => <AppTitle title={'xDDDD'}/>
