@@ -9,17 +9,12 @@ export default {
     component: UncOnoff,
 }
 
-const callBack = () => {
-    action('on or off clicked')
-}
 
-export const OnMode = () => <UncOnoff  onChange={action('on or off clicked')} />
-export const OffMode = () => <UncOnoff onChange={action('on or off clicked')} />
+export const OnMode = () => <UncOnoff   defaultOn={true}  onChange={action('on or off clicked')} />
+export const BugMode = () => <div>Unsync when change default value when already rendered</div>
+export const OffMode = () => <UncOnoff  defaultOn={false} onChange={action('on or off clicked')} />
+export const DefaultInputValue = ()=> <input defaultValue={'xD'}/>
 
-export const ChangeRating = () => {
-    const [turned, setTurned] = useState(false)
-   return  <UncOnoff  onChange={()=>setTurned(!turned)}/>
-}
 
 
 

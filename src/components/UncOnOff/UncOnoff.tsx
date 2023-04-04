@@ -3,13 +3,14 @@ import React, {useState} from 'react';
 type PropsType={
   //   turned: boolean
     onChange: (turned: boolean) => void
+    defaultOn?: boolean
 }
 
 
 
 export const UncOnoff =(props: PropsType)=> {
 
-    const [turned, setTurned] = useState(false)
+    const [turned, setTurned] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onStyle = {
         width: "30px",

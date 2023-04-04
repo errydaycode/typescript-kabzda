@@ -6,7 +6,7 @@ import {AppTitle} from "./components/AppTitle/AppTitle";
 import {UncOnoff} from "./components/UncOnOff/UncOnoff";
 import {UncAcc} from "./components/UncontrolledAcc/UncAcc";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {ControlledOnoff} from "./components/controlledOnOff/ControlledOnoff";
+import {ControlledOnoff} from "./components/OnOff/ControlledOnoff";
 
 
 // function hello() {

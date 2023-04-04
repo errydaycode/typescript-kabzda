@@ -11,11 +11,9 @@ export default {
 
 
 
-export const MenuCollapsedModeUncAcc = () => <UncAcc titleValue={'Drinks'}  />
-export const UsersUncollapsedModeUncAcc = () => <UncAcc titleValue={'Users'}  />
+
 
 export const ModeChanging= () => {
-    const [value,setValue] = useState<boolean>(true)
    return  <UncAcc titleValue={'Drinks'} />
 }
 
