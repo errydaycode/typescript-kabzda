@@ -10,9 +10,6 @@ export default {
 }
 
 
-
-
-
 export const ModeChanging= () => {
    return  <UncAcc titleValue={'Drinks'} />
 }

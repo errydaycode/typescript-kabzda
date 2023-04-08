@@ -24,7 +24,7 @@ function App() {
     return (
         <div className={"App"}>
             <Rating value={ratingValue} onClick={setRatingValue} />
-            <UncontrolledRating/>
+            {/*<UncontrolledRating/>*/}
             <Accordion titleValue={"--Menu--"} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} />
             <UncOnoff onChange={setTurned} /> {turned.toString()}
             {/*<ControlledOnoff turned={turned} setTurned={setTurned} />*/}

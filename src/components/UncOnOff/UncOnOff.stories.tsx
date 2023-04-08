@@ -13,7 +13,7 @@ export default {
 export const OnMode = () => <UncOnoff   defaultOn={true}  onChange={action('on or off clicked')} />
 export const BugMode = () => <div>Unsync when change default value when already rendered</div>
 export const OffMode = () => <UncOnoff  defaultOn={false} onChange={action('on or off clicked')} />
-export const DefaultInputValue = ()=> <input defaultValue={'xD'}/>
+
 
 
 
