@@ -1,52 +1,95 @@
 import React, {useState} from 'react';
-import {Accordion} from "./Accordion";
+import {Accordion, AccordionPropsType} from "./Accordion";
 import {action} from "@storybook/addon-actions";
+import {Button} from "../../stories/Button";
+import {Story} from "@storybook/react";
+
+const GetCategoryObj=(categoryName: string)=>({
+    table: {
+        category: categoryName
+    }
+})
+
+
+
 
 
 export default {
-    title: 'Accordion ',
+    title: 'components/Accordion ',
     component: Accordion,
+    argTypes: {
+        color: {
+            control: 'color',
+           ...GetCategoryObj('Color')
+        },
+        setCollapse: {
+            ...GetCategoryObj('Event')
+        },
+        onClick: {
+            ...GetCategoryObj('Event')
+        },
+        items: {...GetCategoryObj('Main')},
+        collapsed: {...GetCategoryObj('Main')},
+        TitleValue: {...GetCategoryObj('Main')},
+    }
 }
 
 const callback = action('accordion mode change event fired')
 const onClickItem = action('some item was clicked ')
 
+const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />
+const callBacksProps = {
+    /**
+     * setCollapse is a callback function which is defined in App component and called when we want to collapse|uncollapse Accordion
+     */
+    setCollapse: callback,
+    onClick: onClickItem
+}
 
-export const MenuCollapsedMode = () => <
-    Accordion titleValue={'Users'}
-              collapsed={true}
-              setCollapse={callback}
-              items={[]}
-              onClick={onClickItem}
 
-/>
-export const UsersUncollapsedMode = () => <
-    Accordion titleValue={'Users'}
-              collapsed={false}
-              setCollapse={callback}
-              items={
-                  [{title: 'Dimych', value: 1},
-                      {title: 'Valera', value: 2},
-                      {title: 'Artem', value: 3},
-                      {title: 'Viktor', value: 4}]
+export const MenuCollapsedMode = Template.bind({})
 
-              }
-              onClick={onClickItem}
-/>
+MenuCollapsedMode.args = {
+    ...callBacksProps,
+    titleValue: 'Menu',
+    collapsed: true,
+    items: [],
 
-export const ModeChanging = () => {
+}
+
+
+export const UsersUncollapsedMode = Template.bind({})
+
+UsersUncollapsedMode.args = {
+    ...callBacksProps,
+    titleValue: 'Users',
+    collapsed: false,
+    items: [{title: 'Dimych', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},
+        {title: 'Viktor', value: 4}],
+
+
+}
+
+
+export const AccordionModeChanging: Story<AccordionPropsType> = (args) => {
     const [value, setValue] = useState<boolean>(true)
-    return <Accordion titleValue={'Users'}
-                      collapsed={value}
-                      setCollapse={() => setValue(!value)}
-                      items={
-                          [{title: 'Dimych', value: 1},
-                              {title: 'Valera', value: 2},
-                              {title: 'Artem', value: 3},
-                              {title: 'Viktor', value: 4}]}
-                      onClick={(value)=> alert(`user with ID ${value} should be happy `)}
+    return <Accordion {...args} collapsed={value} setCollapse={() => setValue(!value)}
     />
 }
+
+AccordionModeChanging.args = {
+    titleValue: 'Users',
+
+    items:
+        [{title: 'Dimych', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Artem', value: 3},
+            {title: 'Viktor', value: 4}],
+    onClick: (value) => alert(`user with ID ${value} should be happy `)
+}
+
 
 
 // const Template = (args: RatingPropsType) => <Rating {...args} />;
