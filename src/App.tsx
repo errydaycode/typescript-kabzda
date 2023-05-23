@@ -25,7 +25,7 @@ function App() {
         <div className={"App"}>
             <Rating value={ratingValue} onClick={setRatingValue} />
             {/*<UncontrolledRating/>*/}
-            <Accordion titleValue={"--Menu--"} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} />
+            <Accordion titleValue={"--Menu--"} items={[]} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} onClick={()=> {}} />
             <UncOnoff onChange={setTurned} /> {turned.toString()}
             {/*<ControlledOnoff turned={turned} setTurned={setTurned} />*/}
 {/*
@@ -55,3 +55,22 @@ function App() {
 }
 
 export default App;
+
+
+
+function countPositivesSumNegatives(input: Array<number>) {
+    for (let i = 0; i < input.length; i++) {
+        let result = []
+        let negatives = []
+        let positives = []
+        input[i] < 0 ? negatives.push(input[i]) : positives.push(input[i])
+        console.log(negatives)
+        let negSum = negatives.reduce((prev, curr) => {
+            return prev + curr
+        })
+        result.push(positives.length)
+        result.push(negSum)
+        return result
+    }
+}
+
