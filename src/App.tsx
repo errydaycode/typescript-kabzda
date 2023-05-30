@@ -58,19 +58,4 @@ export default App;
 
 
 
-function countPositivesSumNegatives(input: Array<number>) {
-    for (let i = 0; i < input.length; i++) {
-        let result = []
-        let negatives = []
-        let positives = []
-        input[i] < 0 ? negatives.push(input[i]) : positives.push(input[i])
-        console.log(negatives)
-        let negSum = negatives.reduce((prev, curr) => {
-            return prev + curr
-        })
-        result.push(positives.length)
-        result.push(negSum)
-        return result
-    }
-}
 

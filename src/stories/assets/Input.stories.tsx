@@ -9,6 +9,7 @@ export default {
 
 
 export const UncontrolledInput = () => <input/>
+export const ControlledInputWithFixedValue = () => <input value={'it-incubator.by'}/>
 
 
 export const TrackValueOfUncontrolledInput = () => {
@@ -76,7 +77,7 @@ export const ControlledSelect = () => {
 
 }
 
-export const ControlledInputWithFixedValue = () => <input value={'it-incubator.by'}/>
+
 
 
 
