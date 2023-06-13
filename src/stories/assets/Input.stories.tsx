@@ -9,6 +9,7 @@ export default {
 
 
 export const UncontrolledInput = () => <input/>
+
 export const ControlledInputWithFixedValue = () => <input value={'it-incubator.by'}/>
 
 
@@ -67,7 +68,10 @@ export const ControlledSelect = () => {
 
   const [parentValue, setParentValue] = useState<string | undefined>('2')
 
-  const onChange = (e: ChangeEvent<HTMLSelectElement>)=> { (setParentValue(e.currentTarget.value) ) }
+  const onChange = (e: ChangeEvent<HTMLSelectElement>)=> {
+    debugger
+    setParentValue(e.currentTarget.value)
+  }
 
   return <select value={parentValue} onChange={onChange}>
     <option>none</option>
