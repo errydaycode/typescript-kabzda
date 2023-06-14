@@ -7,6 +7,7 @@ import {UncOnoff} from "./components/UncOnOff/UncOnoff";
 import {UncAcc} from "./components/UncontrolledAcc/UncAcc";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {ControlledOnoff} from "./components/OnOff/ControlledOnoff";
+import {Select, SelectItemType} from "./components/select/Select";
 
 
 // function hello() {
@@ -21,8 +22,17 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let[collapse, setCollapse] = useState(true)
     const [turned, setTurned] = useState(false)
+
+
+    const itemsForSelect: SelectItemType[] = [
+        {title: 'Russia', id: 1},
+        {title: 'USA', id: 2},
+        {title: 'Canada', id: 3}
+    ]
+
     return (
         <div className={"App"}>
+            <Select value={2} onChange={()=> {alert('want migrate')}} items={itemsForSelect}/>
             <Rating value={ratingValue} onClick={setRatingValue} />
             {/*<UncontrolledRating/>*/}
             <Accordion titleValue={"--Menu--"} items={[]} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} onClick={()=> {}} />

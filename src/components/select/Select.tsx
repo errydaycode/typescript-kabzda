@@ -1,25 +1,48 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-type ItemType={
+export type SelectItemType={
     title: string
-    value: any
+    id: any
 }
 
 type SelectPropsType={
     value: any
     onChange: (value: any) => void
-    items: ItemType[]
+    items: SelectItemType[]
 
 
 }
 
 export const Select = (props: SelectPropsType) => {
+
+    const [collapsed, setCollapsed] = useState(true)
+
+    const onClickHandler = () => {
+        setCollapsed(!collapsed)
+    }
+
     return (
         <div>
-            <div className={'title of select(like in accordion)'}>
-                {props.items.map((i) => i.value === props.value ? i.title : '')}
+            <div onClick={onClickHandler}>
+                {props.items.map((i) => i.id === props.value ? i.title : '')}
+                <div>
+                    {!collapsed && <SelectOptions items={props.items} /> }
+                </div>
             </div>
         </div>
     );
 };
 
+
+export type SelectOptionsPropsType ={
+    items: SelectItemType[]
+}
+
+
+export const SelectOptions = (props: SelectOptionsPropsType) => {
+    return (
+        <div>
+            {props.items.map((i, index) => <p key={index}> {i.title}</p>)}
+        </div>
+    )
+}

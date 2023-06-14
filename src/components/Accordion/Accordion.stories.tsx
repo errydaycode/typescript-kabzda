@@ -11,9 +11,6 @@ const GetCategoryObj=(categoryName: string)=>({
 })
 
 
-
-
-
 export default {
     title: 'components/Accordion ',
     component: Accordion,
