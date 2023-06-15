@@ -26,7 +26,7 @@ export const Select = (props: SelectPropsType) => {
             <div onClick={onClickHandler}>
                 {props.items.map((i) => i.id === props.value ? i.title : '')}
                 <div>
-                    {!collapsed && <SelectOptions items={props.items} /> }
+                    {!collapsed && <SelectOptions items={props.items} onChange={props.onChange} /> }
                 </div>
             </div>
         </div>
@@ -36,13 +36,14 @@ export const Select = (props: SelectPropsType) => {
 
 export type SelectOptionsPropsType ={
     items: SelectItemType[]
+    onChange: (value: any) => void
 }
 
 
 export const SelectOptions = (props: SelectOptionsPropsType) => {
     return (
         <div>
-            {props.items.map((i, index) => <p key={index}> {i.title}</p>)}
+            {props.items.map((i, index) => <p key={index} onClick={()=> {props.onChange(i.id)}}> {i.title}</p>)}
         </div>
     )
 }

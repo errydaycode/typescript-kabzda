@@ -22,17 +22,21 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let[collapse, setCollapse] = useState(true)
     const [turned, setTurned] = useState(false)
-
+    const [parentValue, setParentValue] = useState('2')
 
     const itemsForSelect: SelectItemType[] = [
-        {title: 'Russia', id: 1},
-        {title: 'USA', id: 2},
-        {title: 'Canada', id: 3}
+        {title: 'Russia', id: '1'},
+        {title: 'USA', id: '2'},
+        {title: 'Canada', id: '3'}
     ]
+
+    function setNewSelectOption(selectId: any) {
+        setParentValue(selectId)
+    }
 
     return (
         <div className={"App"}>
-            <Select value={2} onChange={()=> {alert('want migrate')}} items={itemsForSelect}/>
+            <Select value={parentValue} onChange={setNewSelectOption} items={itemsForSelect}/>
             <Rating value={ratingValue} onClick={setRatingValue} />
             {/*<UncontrolledRating/>*/}
             <Accordion titleValue={"--Menu--"} items={[]} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} onClick={()=> {}} />
