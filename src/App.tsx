@@ -42,6 +42,7 @@ function App() {
             {/*<UncontrolledRating/>*/}
             <Accordion titleValue={"--Menu--"} items={[]} collapsed={collapse} setCollapse={ ()=> {setCollapse(!collapse)}} onClick={()=> {}} />
             <UncOnoff onChange={setTurned} /> {turned.toString()}
+            <UncAcc titleValue={'error'}/>
             {/*<ControlledOnoff turned={turned} setTurned={setTurned} />*/}
 {/*
             <Accordion titleValue={"Menu"} collapsed={true}/>
