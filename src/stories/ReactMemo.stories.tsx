@@ -1,3 +1,4 @@
+
 import {useState} from "react";
 import React from "react";
 
@@ -18,7 +19,7 @@ const UsersSecret = (props: {users: Array<string>}) => {
     }</div>
 }
 
-const Users = React.memo(UsersSecret)
+const Users = React.memo(UsersSecret);
 
 
 
@@ -27,16 +28,19 @@ export const Example1 = () => {
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Dimych', 'Valera', 'Artem', 'Katya'])
     
-    const addUser = () => {
-        const newUsers = [...users, 'Sveta ' + new Date().getTime()]
+
+
+    const adduser = () => {
+        const newUsers = [...users, 'Sveta' + users.length ]
+
         setUsers(newUsers)
     }
 
-    users.push('Sveta ' + new Date().getTime())
+    users.push('Sveta' + new Date().getTime())
 
     return <>
-        <button onClick={()=> {setCounter(counter + 1) }} > ++</button>
-        <button onClick={addUser} > add User</button>
+        <button onClick={()=> {setCounter(counter + 1) }} >+</button>
+        <button onClick={adduser} >add user</button>
         <NewMessagesCounter count={counter} />
         <Users users={users}/>
     </>
