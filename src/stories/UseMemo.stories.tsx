@@ -25,7 +25,7 @@ export const DifficultCountingExample = () => {
        let tempResultA = 1;
         for(let i = 1; i<= a; i++) {
             let fake = 0;
-            while (fake < 100000000){
+            while (fake < 1000000){
                 fake++;
                 const fakeValue = Math.random()
             }
