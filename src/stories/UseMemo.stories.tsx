@@ -17,7 +17,7 @@ export const DifficultCountingExample = () => {
     const [b, setB] = useState<number>(5)
 
 
-    let resultA = 1;
+    let resultA ;
     let resultB = 1;
 
 
@@ -25,14 +25,14 @@ export const DifficultCountingExample = () => {
        let tempResultA = 1;
         for(let i = 1; i<= a; i++) {
             let fake = 0;
-            while (fake < 1000000){
+            while (fake < 100000000){
                 fake++;
                 const fakeValue = Math.random()
             }
             tempResultA = tempResultA * i
         }
        return tempResultA
-    },[a])
+    },[])
 
 
 
@@ -53,9 +53,7 @@ export const DifficultCountingExample = () => {
             Result for b : {resultB}
         </div>
 
-
     </>
-
 }
 
 
