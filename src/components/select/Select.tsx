@@ -4,6 +4,8 @@ import s from './Select.module.css'
 export type SelectItemType = {
     title: string
     id: string
+    countryID?: string
+    population?: number
 }
 
 type SelectPropsType = {
@@ -14,8 +16,9 @@ type SelectPropsType = {
 
 }
 
-export const Select = (props: SelectPropsType) => {
+ export const Select = React.memo((props: SelectPropsType) => {
 
+     console.log('SELCETSASFSA')
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
@@ -93,7 +96,7 @@ export const Select = (props: SelectPropsType) => {
         //     </div>
         // </div>
     );
-};
+});
 
 
 export type SelectOptionsPropsType = {

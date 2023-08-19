@@ -17,7 +17,7 @@ export const DifficultCountingExample = () => {
     const [b, setB] = useState<number>(5)
 
 
-    let resultA ;
+    let resultA = 1;
     let resultB = 1;
 
 
@@ -32,7 +32,7 @@ export const DifficultCountingExample = () => {
             tempResultA = tempResultA * i
         }
        return tempResultA
-    },[])
+    },[a])
 
 
 
