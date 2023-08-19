@@ -17,25 +17,41 @@ export const SelectsWithFilters = () => {
     console.log('SelectsWithFilters')
 
     const [counter, setCounter] = useState(0)
-    const [value, setValue] = useState('2')
+    const [value1, setValue1] = useState('2')
+    const [value2, setValue2] = useState('2')
+    const [value3, setValue3] = useState('2')
     const [state, setState] = useState<SelectItemType[]>([
-        {id: '1', title: 'Minsk',population: 15000000 , countryID: '16'},
-        {id: '2', title: 'Moscow',population: 15000000 , countryID: '16'},
-        {id: '3', title: 'Kiev',population: 15000000 , countryID: '16'},
-        {id: '3', title: 'Kiev',population: 15000000 , countryID: '16'},
-        {id: '3', title: 'Kiev',population: 15000000 , countryID: '16'},
-        {id: '3', title: 'Kiev',population: 15000000 , countryID: '16'},
-        {id: '3', title: 'Kiev',population: 15000000 , countryID: '16'},
+        {id: '1', title: 'Minsk',population: 3, countryID: '2'},
+        {id: '2', title: 'Moscow',population: 10 , countryID: '1'},
+        {id: '3', title: 'Kiev',population: 7 , countryID: '3'},
+        {id: '4', title: 'Gomel',population: 1 , countryID: '2'},
+        {id: '5', title: 'Brest',population: 0.3 , countryID: '2'},
+        {id: '6', title: 'Saint-Petersburg',population: 6.5 , countryID: '1'},
+        {id: '7', title: 'Vladivostok',population: 5, countryID: '1'},
+        {id: '8', title: 'Odessa',population: 4 , countryID: '3'},
+        {id: '9', title: 'Melitopol',population: 2 , countryID: '3'},
     ])
 
+    const startsFromM = useMemo(()=> {
+      return   state.filter(c=> c.title.toLowerCase().startsWith('m'))
+    }, [state])
 
+    const russiansCities = useMemo(()=> {
+        return state.filter(c=> c.population > 5)
+    }, [state])
 
-
+    const bigPopulation = useMemo(()=>{ return state.filter(c => c.population > 5)}, [state])
 
     return <>
         <button onClick={()=> {setCounter(counter + 1) }} >+</button>
         {counter}
-        <Select value={value} onChange={setValue} items={state} />
+        <div style={{ display: 'inline-block' }}>
+            <Select value={value1} onChange={setValue1} items={startsFromM} />
+        </div> <div style={{ display: 'inline-block' }}>
+            <Select value={value2} onChange={setValue2} items={russiansCities} />
+        </div> <div style={{ display: 'inline-block' }}>
+            <Select value={value3} onChange={setValue3} items={bigPopulation} />
+        </div>
 
     </>
 }

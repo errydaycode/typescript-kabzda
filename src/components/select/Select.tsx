@@ -5,7 +5,7 @@ export type SelectItemType = {
     title: string
     id: string
     countryID?: string
-    population?: number
+    population: number
 }
 
 type SelectPropsType = {
@@ -18,7 +18,7 @@ type SelectPropsType = {
 
  export const Select = React.memo((props: SelectPropsType) => {
 
-     console.log('SELCETSASFSA')
+     console.log('Select rendering')
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
