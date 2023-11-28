@@ -25,10 +25,10 @@ function App() {
     const [parentValue, setParentValue] = useState('2')
 
     const itemsForSelect: SelectItemType[] = [
-        {title: 'none', id: '0'},
-        {title: 'Russia', id: '1'},
-        {title: 'USA', id: '2'},
-        {title: 'Canada', id: '3'}
+        {title: 'none', id: '0', population: 0},
+        {title: 'Russia', id: '1',  population: 1499999},
+        {title: 'USA', id: '2', population: 3490000},
+        {title: 'Canada', id: '3',  population: 49000}
     ]
 
     function setNewSelectOption(selectId: any) {

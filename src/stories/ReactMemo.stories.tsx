@@ -13,7 +13,7 @@ const NewMessagesCounter = (props: {count: number }) => {
 }
 
 const UsersSecret = (props: {users: Array<string>}) => {
-    console.log('USERS!')
+    console.log('UsersSecret!')
     return <div>{
         props.users.map((u, index) => <div key={index}>{u}</div>)
     }</div>
