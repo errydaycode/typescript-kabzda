@@ -9,7 +9,6 @@ export default  {
 }
 
 
-
 export const SelectsWithFilters = () => {
 
     console.log('SelectsWithFilters')
@@ -22,7 +21,7 @@ export const SelectsWithFilters = () => {
         {id: '1', title: 'Minsk',population: 3, countryID: '2'},
         {id: '2', title: 'Moscow',population: 10 , countryID: '1'},
         {id: '3', title: 'Kiev',population: 7 , countryID: '3'},
-        {id: '4', title: 'Gomel',population: 1 , countryID: '2'},
+        {id: '4', title: 'Vitebsk',population: 1 , countryID: '2'},
         {id: '5', title: 'Brest',population: 0.3 , countryID: '2'},
         {id: '6', title: 'Saint-Petersburg',population: 6.5 , countryID: '1'},
         {id: '7', title: 'Vladivostok',population: 5, countryID: '1'},
