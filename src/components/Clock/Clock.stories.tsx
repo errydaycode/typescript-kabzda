@@ -1,6 +1,4 @@
 import React from 'react';
-
-import exp from "constants";
 import {Clock} from "./Clock";
 
 export default {
@@ -8,4 +6,5 @@ export default {
     component: Clock
 }
 
-export const BaseClock = () => <Clock/>
+export const BaseAnalogExample = () => <Clock mode={'analog'}/>
+export const BaseDigitalExample = () => <Clock mode={'digital'}/>
